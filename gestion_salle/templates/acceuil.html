@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Salles de Cours</title>
+    <style>
+        /* Reset some default styles for better consistency */
+        * {
+            box-sizing: border-box;
+
+        }
+
+        body,
+        h1,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            padding-top: 50px;
+            color: midnightblue;
+        }
+
+        a {
+            text-align: center;
+            text-decoration: none;
+            color: rgb(250, 250, 250);
+        }
+
+        a {
+            padding-left: 60px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: midnightblue;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            height: auto;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        /*  footer {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            background-color: midnightblue;
+            height: 50px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        } */
+
+        a:hover {
+            color: rgb(90, 90, 201);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            margin-bottom: 30px;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer * {
+            background: midnightblue;
+            color: #fff;
+            text-align: center;
+            padding-top: 4px;
+        }
+
+        footer .social-icons img {
+            width: 24px;
+            height: 26px;
+            margin: 0 0.5em;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 20px 10px;
+            }
+
+            .feature img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .banner {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: midnightblue;
+            width: auto;
+            height: auto;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .banner  {
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;            
+        }
+        .banner a{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: midnightblue;
+            border-radius: 9px;
+            padding: 5px 10px;
+            margin-bottom:40px ;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="padding-bottom: 20px;">GESTION DES SALLES DE COURS</h1>
+        <nav>
+            <a href="{% url 'reserver_salle' %}">Réserver une Salle</a>
+            <a href="{% url 'liberer_salle' %}">Libérer une Salle</a>
+            <a href="{% url 'login1' %}">Connexion</a>
+        </nav>
+        
+    </header>
+
+    <div class="banner" >
+        <h2>Bienvenue sur notre application de </h2>
+        <h3>Gestion des Salles de Cours :</h3>
+        <!-- <img src="{% static 'images/banner.png' %}" alt="Image de présentation" class="banner_img"> -->
+        <div style="margin-bottom: 10px;"><a href="{% url 'reserver_salle' %}" >RESERVER</a></div>
+    </div>
+    <main>
+
+        <p>Veuillez choisir dans la barre de navigation l'opération que vous
+            souhaitez effectuer.</p>
+
+        <div class="feature">
+            <img src="{% static 'images/reservation_icon.png' %}" alt="Icone Réservation">
+            <h3>Réservez Facilement</h3>
+            <p>Réservez des salles de cours en quelques clics. Gérez les
+                horaires et les disponibilités avec facilité.</p>
+        </div>
+
+        <div class="feature">
+            <img src="{% static 'images/calendar.png' %}" alt="Icone Calendrier">
+            <h3>Calendrier Intégré</h3>
+            <p>Consultez les calendriers de réservation pour planifier vos
+                cours sans conflits. Recevez des rappels automatiques.</p>
+        </div>
+
+        <div class="feature">
+            <img src="{% static 'images/rapport.png' %}" alt="Icone Rapport">
+            <h3>Rapports et Analytiques</h3>
+            <p>Obtenez des rapports détaillés sur l'utilisation des salles
+                de cours. Analysez les tendances pour une meilleure
+                gestion.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="padding-top: 10px;">
+            <p>© 2024 GESTION DES SALLES. Tous droits réservés.</p>
+            <p>
+                <a href="mailto:contact@nomdapplication.com">esagnde@esagnde.org</a>
+                |
+                <a href="tel:+123456789">+228 90 35 60 50</a>
+            </p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com"><img src="{% static 'images/facebook.png' %}" alt="Facebook">Facebook</a>
+                <a href="https://www.x.com"><img src="{% static 'images/twiter.png' %}" alt="Twitter">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
